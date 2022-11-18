@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;900&display=swap');
  
-* {
+
+ *,
+ *::before,
+ *::after {
+    box-sizing: border-box;
     font-family: 'Red Hat Display', sans-serif;
  }
 
@@ -88,11 +92,39 @@ p {
     text-align: center;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    line-height: 1.625rem;
+    font-weight: 900;
+    text-align: center;
+}
+
 img {
     height:auto;
     width: 100%;
 }
 
+/* * -------------------------------- BUTTON STYLES ------------------------------ */
+
+.button {
+    border-radius: 29px;
+    justify-self: center;
+    padding-block: 1rem;
+}
+
+.green {
+    background-color: var(--clr-accent-main);
+    max-width: 12.0625rem;
+    padding-inline: 2.5rem;
+}
+
+.purple {
+    background-color: var(--clr-accent-secondary);
+    max-width: 8.6875rem;
+    padding-inline: 1.8125rem;
+}
 /* * -------------------------------- <> ------------------------------ */
 
 header {
@@ -125,6 +157,9 @@ header {
 }
 
 .main-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 2;
@@ -132,6 +167,20 @@ header {
     margin-right: 1rem;
 }
 
-/* .right {
-    grid-column-start: 3;
-} */
+.line {
+    border-left: 1px solid #87879D40;
+    height: 5.25rem;
+    margin-top: 5rem;
+}
+
+.marker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    color: var(--clr-neutral-600);
+    height: 3.5rem;
+    width: 3.5rem;
+    border: 1px solid #87879D40;
+    border-radius: 29px;
+}
