@@ -6,6 +6,7 @@
  *::after {
     box-sizing: border-box;
     font-family: 'Red Hat Display', sans-serif;
+    transition: all .5s ease-in-out;
  }
 
  :root {
@@ -59,6 +60,7 @@
 
 body {
     background-color: var(--clr-neutral-400);
+    min-width: 375px;
 }
 
 h1 {
@@ -115,6 +117,7 @@ img {
     padding-block: 1rem;
     margin-block: 0 1rem;
     cursor: pointer;
+    transition: background-color .3s ease-out;
 }
 
 .green {
@@ -122,10 +125,27 @@ img {
     padding-inline: 2.5rem;
 }
 
+.green:hover {
+    background-color: #71C0D4;
+}
+
 .purple {
     background-color: var(--clr-accent-secondary);
     padding-inline: 1.8125rem;
 }
+
+.purple:hover {
+    background-color: #B18BDD;
+}
+
+.light-green {
+    color: #8FE3F9;
+}
+
+.light-purple {
+    color: #D9B8FF;
+}
+
 /* * -------------------------------- <> ------------------------------ */
 
 header {
@@ -180,6 +200,12 @@ header {
     margin-bottom: 2rem;
 }
 
+.btn-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 .line {
     border-left: 1px solid #87879D40;
@@ -199,6 +225,17 @@ header {
     border: 1px solid #87879D40;
     border-radius: 29px;
     z-index: 2;
+}
+
+@media screen and (min-width: 33rem) {
+    .main-info > p {
+        width: min(60vw, 33.75rem);
+    }
+
+    .btn-wrap {
+        flex-direction: row;
+        gap: 1rem;
+    }
 }
 
 /* * -------------------------------- SEC 02 ------------------------------ */
@@ -234,17 +271,34 @@ header {
 }
 
 .sec-02 > h2 {
+    max-width: 28rem;
     margin-bottom: 2rem;
 }
 
 .sec-02 > p {
     margin-inline: .5rem;
+    max-width: 36rem;
 }
 
-.sec-02 >   .line,
-            .marker {
-                transform: translateY(1.75rem);
+.sec-02 >  .line,
+.sec-02 >  .marker {
+               transform: translateY(1.75rem);
             }
+
+@media screen and (min-width: 32rem) {
+    .sec-02 {
+        width: calc(100% - 5rem);
+    }
+
+    .pic-wrap {
+        flex-wrap: nowrap;
+    }
+    
+    .img-sec02 {
+        width: calc(25% - .5rem);
+    }
+    
+}
 
 /* * -------------------------------- FOOTER ------------------------------ */
 
@@ -278,10 +332,13 @@ footer > * {
 
 footer > h2 {
     margin-top: 5.75rem;
+    width: min(100% - 4rem, 29rem);
 }
 
 footer > p {
-    margin-top: 1.5rem;    
+    margin-top: 1.5rem;
+    width: min(100% - 8rem, 31rem);
+
 }
 
 footer > .button {
