@@ -325,6 +325,12 @@ footer::after {
     z-index: -1;
 }
 
+@media screen and (min-width: 33rem) {
+    footer::after {
+        background-image: url(../assets/tablet/image-footer.jpg);
+    }
+}
+
 footer > * {
     text-align: center;
     color: var(--clr-neutral-400);
